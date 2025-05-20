@@ -132,6 +132,22 @@ body {
     color: white;
 }
 
+.hero-headshot {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.headshot {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+}
+
 /* Sections */
 section {
     padding: 5rem 0;
@@ -284,7 +300,101 @@ footer {
     text-align: center;
 }
 
-/* Responsive Design */
+/* Articles Section */
+.articles {
+    background: var(--background);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.article-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 1.5rem;
+}
+
+.article-content h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-date {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.article-excerpt {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
+.substack-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.substack-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.substack-cta .btn i {
+    font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -308,5 +418,14 @@ footer {
     
     h2 {
         font-size: 2rem;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .article-image {
+        height: 180px;
     }
 } 
